@@ -1,17 +1,19 @@
-- hosts: web
+---
+- hosts: web 
   become: True
   tasks:
-  - name: install apache 2
-    yum:
-     name: httpd
-     state: present
-  - name: copying html file
-    copy:
-     src: index.html
-     dest: /var/www/html
-  - name: start Httpd
-    service:
-     name: httpd
-     state: started
-
+    - name: Install packages
+      yum:
+        name: "httpd"
+        state: "present"
+    - name: Start Apache server
+      service:
+        name: httpd
+        state: started
+        enabled: True
+    - name: Deploy static website
+      copy:
+        src: index.html
+        dest: /var/www/html/
+...
 
