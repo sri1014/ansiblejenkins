@@ -1,0 +1,5 @@
+[web]
+172.31.37.209 ansible_user=ec2-user
+172.31.32.87 ansible_user=ec2-user
+172.31.39.180 ansible_user=ec2-user
+
